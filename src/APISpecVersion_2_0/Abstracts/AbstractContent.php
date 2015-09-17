@@ -1,7 +1,4 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Abstracts;
 
@@ -54,6 +51,12 @@ abstract class AbstractContent
     protected $season;
 
     /**
+     * @optional
+     * @var AbstractProducer
+     */
+    protected $producer;
+
+    /**
      * Original URL of the content, for buy-side contextualization or review.
      *
      * @optional
@@ -78,12 +81,12 @@ abstract class AbstractContent
     protected $videoquality;
 
     /**
-     * Comma separated list of keywords describing the content.
+     * Specifies the type of content (game, video, text, etc.).
      *
      * @optional
      * @var string
      */
-    protected $keywords;
+    protected $context;
 
     /**
      * Content rating (e.g., MPAA).
@@ -102,12 +105,20 @@ abstract class AbstractContent
     protected $userrating;
 
     /**
-     * Specifies the type of content (game, video, text, etc.).
+     * Media rating per QAG guidelines.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $qagmediarating;
+
+    /**
+     * Comma separated list of keywords describing the content.
      *
      * @optional
      * @var string
      */
-    protected $context;
+    protected $keywords;
 
     /**
      * Is content live? E.g., live video stream, live blog. "1" means contents is live. "0" means it is not live.
@@ -126,16 +137,25 @@ abstract class AbstractContent
     protected $sourcerelationship;
 
     /**
-     * @optional
-     * @var AbstractProducer
-     */
-    protected $producer;
-
-    /**
      * Length of content (appropriate for video or audio) in seconds.
      *
      * @optional
      * @var int
      */
     protected $len;
+
+    /**
+     * Content language using ISO-639-1-alpha-2.
+     *
+     * @optional
+     * @var string
+     */
+    protected $language;
+
+    /**
+     * Indicator of whether or not the content is embeddable (e.g., an embeddable video player), where 0 = no, 1 = yes.
+     *
+     * @var integer
+     */
+    protected $embeddable;
 }

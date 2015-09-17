@@ -1,11 +1,9 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request;
 
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\User\Data;
+use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\User\Extension;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\User\Geo;
 
 class User
@@ -70,8 +68,18 @@ class User
     protected $geo;
 
     /**
+     * Additional user data.
+     *
      * @optional
      * @var Data[]
      */
     protected $data;
+
+    /**
+     * Placeholder for exchange-specific extensions to OpenRTB.
+     *
+     * @optional
+     * @var Extension
+     */
+    protected $ext;
 }

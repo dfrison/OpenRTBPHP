@@ -1,10 +1,8 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request;
 
+use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Site\Extension;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Site\Content;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Site\Publisher;
 
@@ -67,14 +65,6 @@ class Site
     protected $page;
 
     /**
-     * Specifies whether the site has a privacy policy. "1" means there is a policy. "0" means there is not.
-     *
-     * @optional
-     * @var int
-     */
-    protected $privacypolicy;
-
-    /**
      * Referrer URL that caused navigation to the current page.
      *
      * @optional
@@ -91,6 +81,23 @@ class Site
     protected $search;
 
     /**
+     * Mobile-optimized signal, where 0 = no, 1 = yes.
+     *
+     * @var integer
+     */
+    protected $mobile;
+
+    /**
+     * Specifies whether the site has a privacy policy. "1" means there is a policy. "0" means there is not.
+     *
+     * @optional
+     * @var int
+     */
+    protected $privacypolicy;
+
+    /**
+     * Details about the Publisher of the site.
+     *
      * @optional
      * @var Publisher
      */
@@ -109,4 +116,12 @@ class Site
      * @var string
      */
     protected $keywords;
+
+    /**
+     * Placeholder for exchange-specific extensions to OpenRTB.
+     *
+     * @optional
+     * @var Extension
+     */
+    protected $ext;
 }

@@ -1,7 +1,4 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid;
 
@@ -9,10 +6,11 @@ use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\App;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Device;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Extensions;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Impression;
+use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Regs;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Site;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\User;
 
-class Request
+class BidRequest
 {
     /**
      * Unique ID of the bid request
@@ -54,6 +52,14 @@ class Request
      * @var User
      */
     protected $user;
+
+    /**
+     * Indicator of test mode in which auctions are not billable, where 0 = live mode, 1 = test mode.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $test = 0;
 
     /**
      * Auction Type. If "1", then first price auction. If "2", then second price auction. Additional auction types can
@@ -121,6 +127,14 @@ class Request
      * @var string[]
      */
     protected $badv;
+
+    /**
+     * A Regs objectthat specifies any industry, legal, or governmental regulations in force for this request.
+     *
+     * @optional
+     * @var Regs
+     */
+    protected $regs;
 
     /**
      * This object is a placeholder that may contain custom JSON agreed to by the parties in an OpenRTB transaction to

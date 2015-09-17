@@ -1,7 +1,4 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Impression;
 
@@ -26,6 +23,42 @@ class Banner
     protected $h;
 
     /**
+     * Maximum width of the impression in pixels.
+     * If included along with a w value then w should be interpreted as a recommended or preferred width.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $wmax;
+
+    /**
+     * Maximum height of the impression in pixels.
+     * If included along with an h value then h should be interpreted as a recommended or preferred height.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $hmax;
+
+    /**
+     * Minimum width of the impression in pixels.
+     * If included along with a w value then w should be interpreted as a recommended or preferred width.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $wmin;
+
+    /**
+     * Minimum height of the impression in pixels.
+     * If included along with an h value then h should be interpreted as a recommended or preferred height.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $hmin;
+
+    /**
      * Unique identifier for this banner object. Useful for tracking multiple banner objects (e.g., in companion banner
      * array). Usually starts with 1, increasing with each object. Combination of impression id banner objects should be
      * unique.
@@ -34,14 +67,6 @@ class Banner
      * @var string
      */
     protected $id;
-
-    /**
-     * Ad position
-     *
-     * @optional
-     * @var int
-     */
-    protected $pos;
 
     /**
      * Blocked creative types. If blank, assume all types are allowed.
@@ -58,6 +83,14 @@ class Banner
      * @var int[]
      */
     protected $battr = array();
+
+    /**
+     * Ad position
+     *
+     * @optional
+     * @var int
+     */
+    protected $pos;
 
     /**
      * Whitelist of content MIME types supported. Popular MIME types include, but are not limited to "image/jpg",

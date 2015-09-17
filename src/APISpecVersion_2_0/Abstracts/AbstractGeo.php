@@ -1,7 +1,4 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Abstracts;
 
@@ -23,6 +20,15 @@ abstract class AbstractGeo
      * @var float
      */
     protected $lon;
+
+    /**
+     * Indicate the source of the geo data (GPS, IP address, user provided) Type should be provided when lat/lon is
+     * provided.
+     *
+     * @recommended
+     * @var int
+     */
+    protected $type;
 
     /**
      * Country using ISO-3166-1 Alpha-3.
@@ -75,11 +81,10 @@ abstract class AbstractGeo
     protected $zip;
 
     /**
-     * Indicate the source of the geo data (GPS, IP address, user provided) Type should be provided when lat/lon is
-     * provided.
+     * Local time as the number +/- of minutes from UTC.
      *
-     * @recommended
-     * @var int
+     * @optional
+     * @var integer
      */
-    protected $type;
+    protected $utcoffset;
 }

@@ -1,11 +1,9 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request;
 
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\App\Content;
+use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\App\Extension;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\App\Publisher;
 
 class App
@@ -27,12 +25,28 @@ class App
     protected $name;
 
     /**
+     * Application bundle or package name (e.g., com.foo.mygame); intended to be a unique ID across exchanges.
+     *
+     * @optional
+     * @var string
+     */
+    protected $bundle;
+
+    /**
      * Domain of the application (e.g., "mygame.foo.com").
      *
      * @optional
      * @var string
      */
     protected $domain;
+
+    /**
+     * App store URL for an installed app; for QAG 1.5 compliance.
+     *
+     * @optional
+     * @var string
+     */
+    protected $storeurl;
 
     /**
      * Array of IAB content categories for the overall application.
@@ -65,15 +79,6 @@ class App
      * @var string
      */
     protected $ver;
-
-    /**
-     * Application bundle or package name (e.g., com.foo.mygame). This is intended to be a unique ID across multiple
-     * exchanges.
-     *
-     * @recommended
-     * @var string
-     */
-    protected $bundle;
 
     /**
      * Specifies whether the app has a privacy policy. "1" means there is a policy and "0" means there is not.
@@ -110,4 +115,11 @@ class App
      * @var string
      */
     protected $keywords;
+
+    /**
+     * Placeholder for exchange-specific extensions to OpenRTB.
+     *
+     * @var Extension
+     */
+    protected $ext;
 }

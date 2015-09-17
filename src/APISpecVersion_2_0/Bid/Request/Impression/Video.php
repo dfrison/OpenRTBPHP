@@ -1,7 +1,4 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Request\Impression;
 
@@ -15,14 +12,6 @@ class Video
      * @var string[]
      */
     protected $mimes;
-
-    /**
-     * Indicates whether the ad impression is linear or non-linear.
-     *
-     * @required
-     * @var int
-     */
-    protected $linearity;
 
     /**
      * Minimum video ad duration in seconds.
@@ -43,10 +32,19 @@ class Video
     /**
      * Video bid response protocols.
      *
+     * @deprecated
      * @required
      * @var int
      */
     protected $protocol;
+
+    /**
+     * Array of supported video bid response protocols.
+     *
+     * @recommended
+     * @var integer[]
+     */
+    protected $protocols;
 
     /**
      * Width of the player in pixels. This field is not required but it's highly recommended that this information be
@@ -75,6 +73,14 @@ class Video
     protected $startdelay;
 
     /**
+     * Indicates whether the ad impression is linear or non-linear.
+     *
+     * @required
+     * @var int
+     */
+    protected $linearity;
+
+    /**
      * If multiple ad impressions are offered in the same bid request, the sequence number will allow for the
      * coordinated delivery of multiple creatives.
      *
@@ -92,6 +98,14 @@ class Video
     protected $battr = array();
 
     /**
+     * Minimum bit rate in Kbps. Exchange may set this dynamically, or universally across their set of publishers.
+     *
+     * @optional
+     * @var int
+     */
+    protected $minbitrate;
+
+    /**
      * Maximum extended video ad duration, if extension is allowed. If blank or 0, extension is not allowed. If -1,
      * extension is allowed, and there is no time limit imposed. If greater than 0, then the value represents the number
      * of seconds of extended play supported beyond the maxduration value.
@@ -100,14 +114,6 @@ class Video
      * @var int
      */
     protected $maxextended;
-
-    /**
-     * Minimum bit rate in Kbps. Exchange may set this dynamically, or universally across their set of publishers.
-     *
-     * @optional
-     * @var int
-     */
-    protected $minbitrate;
 
     /**
      * Maximum bit rate in Kbps. Exchange may set this dynamically, or universally across their set of publishers.
@@ -167,4 +173,12 @@ class Video
      * @var int[]
      */
     protected $api;
+
+    /**
+     * Supported VAST companion ad types.
+     *
+     * @recommended if companion Banner objects are included via the companionad array.
+     * @var integer[]
+     */
+    protected $companiontype;
 }

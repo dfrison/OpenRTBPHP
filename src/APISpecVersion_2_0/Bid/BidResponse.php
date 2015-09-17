@@ -1,14 +1,11 @@
 <?php
-/**
- * @author: gareth
- */
 
 namespace Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid;
 
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Response\Extensions;
 use Garoevans\OpenRTBPHP\APISpecVersion_2_0\Bid\Response\SeatBid;
 
-class Response
+class BidResponse
 {
     /**
      * ID of the bid request.
