@@ -50,6 +50,13 @@ class BidResponse
     protected $customdata;
 
     /**
+     * Reason for not bidding.
+     *
+     * @var integer
+     */
+    protected $nbr;
+
+    /**
      * Optional extensions to the bid response, as specified by the exchange.
      *
      * @optional

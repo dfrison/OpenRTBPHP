@@ -91,12 +91,44 @@ class Bid
     protected $crid;
 
     /**
+     * IAB content categories of the creative.
+     *
+     * @optional
+     * @var string[]
+     */
+    protected $cat;
+
+    /**
      * Array of creative attributes.
      *
      * @optional
      * @var int[]
      */
     protected $attr;
+
+    /**
+     * Reference to the deal.id from the bid request if this bid pertains to a private marketplace direct deal.
+     *
+     * @optional
+     * @var string
+     */
+    protected $dealid;
+
+    /**
+     * Height of the creative in pixels.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $h;
+
+    /**
+     * Width of the creative in pixels.
+     *
+     * @optional
+     * @var integer
+     */
+    protected $w;
 
     /**
      * Optional extensions to the bid object, as specified by an exchange.
